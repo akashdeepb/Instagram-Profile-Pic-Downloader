@@ -24,8 +24,8 @@ for i in range(len(sys.argv)):
     
     # Show help Text 
     if str(sys.argv[i]) == '-h' or str(sys.argv[i]) == '--help':
-        print("HELP")
-    
+        print("\n\n Instagram-Profile-Pic-Downloader\n Git Repository : https://www.github.com/akashdeepb/Instagram-Profile-Pic-Downloader\n\n -u \t Username \n -o \t Output Filename \n -h \t Well this is what happens ;)\n\n")
+        exit(0) 
     # Get Username from Args
     if str(sys.argv[i]) == '-u' or str(sys.argv[i]) == '--username':
         try:
