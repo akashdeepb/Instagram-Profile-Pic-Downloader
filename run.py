@@ -17,7 +17,7 @@ for i in range(len(sys.argv)):
     # Get Output name from Args
     if str(sys.argv[i]) == '-o' or str(sys.argv[i]) == '--output':
         try:
-            OUTPUT = sys.argv[i+1]
+            OUTPUT = sys.argv[i+1] + ".jpg"
         except:
             print("Invalid Output Filename")
             exit(0)
@@ -38,7 +38,7 @@ for i in range(len(sys.argv)):
 if len(PROFILE_UNAME) == 0:
     PROFILE_UNAME = input("Enter Instagram Username : ")
 if len(OUTPUT) == 0:
-    OUTPUT = PROFILE_UNAME
+    OUTPUT = PROFILE_UNAME + ".jpg"
 
 # Start a new Session
 r = requests.Session()
@@ -50,7 +50,7 @@ for line in res.text.splitlines():
     if re.search("property=\"og:image\"", line):
         pic_url = line.split()[2][9:-1] # Extract Profile Picture link
         break
-
+print(pic_url)
 # Exit if Couldn't find Image URL
 if(len(pic_url) == 0):
     print("Couldn't Find Image")
