@@ -50,7 +50,6 @@ for line in res.text.splitlines():
     if re.search("property=\"og:image\"", line):
         pic_url = line.split()[2][9:-1] # Extract Profile Picture link
         break
-print(pic_url)
 # Exit if Couldn't find Image URL
 if(len(pic_url) == 0):
     print("Couldn't Find Image")
